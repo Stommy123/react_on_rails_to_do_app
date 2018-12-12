@@ -1,0 +1,9 @@
+<%= form_with(model: task) do |form| %>
+  <div class="actions btn-group">
+    <%= form.submit task.completed? ? "Uncomplete" : "Complete",
+        class: "btn btn-secondary" %>
+    <%= link_to 'Destroy', @task,
+        method: :delete, data: { confirm: 'Are you sure?' },
+        class: "btn btn-danger" %>
+  </div>
+<% end %>

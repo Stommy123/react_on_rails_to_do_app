@@ -1,0 +1,11 @@
+<%= react_component 'Map',
+    props: {
+      accessToken:  ENV['MAPBOX_ACCESS_TOKEN'],
+      styleUrl:     ENV['MAPBOX_STYLE_URL'],
+      coordinates:  @coordinates,
+      centerOnUser: true
+    } %>
+
+<hr>
+
+<%= render 'tasks/form', task: @task %>

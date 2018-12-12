@@ -1,0 +1,57 @@
+<%= form_with(model: task, local: controller_name == "tasks") do |form| %>
+  <div class="row">
+    <div class="form-group col-md-8">
+      <%= form.label :description %>
+      <%= form.text_field :description, class: "text-input form-control" %>
+    </div>
+
+    <div class="form-group col-md-4">
+      <%= form.label :due_date %>
+      <%= form.date_field :due_date, class: "text-input form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-3">
+      <%= form.label :street %>
+      <%= form.text_field :street, class: "text-input form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= form.label :city %>
+      <%= form.text_field :city, class: "text-input form-control" %>
+    </div>
+    <div class="form-group col-md-2">
+      <%= form.label :state %>
+      <%= form.text_field :state, class: "text-input form-control" %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= form.label :country %>
+      <%= form.text_field :country, class: "text-input form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= form.label :latitude %>
+      <%= form.text_field :latitude,
+          readonly: true,
+          class: "form-control",
+          value: @coordinates.last %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= form.label :longitude %>
+      <%= form.text_field :longitude,
+          readonly: true,
+          class: "form-control",
+          value: @coordinates.first %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= label_tag :use_current_location %>
+      <%= check_box_tag :use_current_location, "1", false, class: "form-control", disabled: @coordinates.empty? %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit nil, class: "btn btn-primary" %>
+  </div>
+<% end %>

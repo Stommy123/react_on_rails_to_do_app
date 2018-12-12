@@ -1,0 +1,10 @@
+<%= form_with(model: [task, sub_task]) do |form| %>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Create SubTask", class: "btn btn-primary" %>
+  </div>
+<% end %>

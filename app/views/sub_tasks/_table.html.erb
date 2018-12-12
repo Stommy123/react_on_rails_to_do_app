@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% sub_tasks.each do |sub_task| %>
+      <tr>
+        <td>
+          <% if sub_task.completed? %>
+            <s><%= sub_task.description %></s>
+          <% else %>
+            <%= sub_task.description %>
+          <% end %>
+        </td>
+        <td>
+          <%= render "update_form", sub_task: sub_task %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

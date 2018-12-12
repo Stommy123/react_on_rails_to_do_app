@@ -1,0 +1,19 @@
+{
+  "name": "todo_c29",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "axios": "^0.18.0",
+    "babel-preset-react": "^6.24.1",
+    "date-fns": "^1.29.0",
+    "mapbox-gl": "^0.51.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-on-rails": "11.1.8",
+    "reactstrap": "^6.5.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}

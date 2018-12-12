@@ -1,0 +1,35 @@
+<h3>
+  <span class="<%= @task.badge_class %>">
+    <%= @task.due_date&.strftime('%-m/%-d/%y') %>
+  </span>
+</h3>
+
+<h3>
+  <% if @task.completed? %>
+    <s><%= @task.description %></s>
+  <% else %>
+    <%= @task.description %>
+  <% end %>
+</h3>
+
+<p>
+  <%= render "tasks/update_form", task: @task %>
+</p>
+
+<%= render 'table', sub_tasks: @sub_tasks %>
+
+<hr>
+
+<%= render 'form', task: @task, sub_task: @sub_task %>
+
+<hr>
+
+<% if @task.latitude && @task.longitude %>
+  <%= react_component 'Map',
+      props: {
+        accessToken:  ENV['MAPBOX_ACCESS_TOKEN'],
+        styleUrl:     ENV['MAPBOX_STYLE_URL'],
+        coordinates:  @task.to_coordinates.reverse,
+        centerOnUser: false
+      } %>
+<% end %>

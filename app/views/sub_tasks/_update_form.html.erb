@@ -1,0 +1,10 @@
+<%= form_with(model: sub_task) do |form| %>
+  <div class="float-right btn-group">
+    <%= form.submit sub_task.completed? ? "Uncomplete" : "Complete",
+        class: "btn btn-secondary btn-sm" %>
+    <%= link_to 'Destroy', sub_task,
+        method: :delete,
+        data: { confirm: 'Are you sure?' },
+        class: "btn btn-danger btn-sm" %>
+  </div>
+<% end %>

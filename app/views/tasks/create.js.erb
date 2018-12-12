@@ -1,0 +1,21 @@
+var notice = document.getElementById("notice")
+if(notice){
+  notice.innerHTML="Task was successfully created"
+}else{
+  document.getElementById("flashes")
+    .innerHTML='<div class="alert alert-primary alert-dismissible fade show" role="alert" id="notice">Task was successfully created<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+}
+
+window.map.fetchTasks()
+
+<% if @task.latitude && @task.longitude %>
+  window.map.flyTo(
+    <%= @task.longitude %>,
+    <%= @task.latitude %>
+  )
+<% end %>
+
+var textInput = document.getElementsByClassName('text-input');
+for (let i = 0; i < textInput.length; i ++){
+  textInput[i].value = "";
+}
