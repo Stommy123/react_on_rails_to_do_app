@@ -10,4 +10,8 @@
 
 * MVC
 
+* Axios
+
+* Reactstrap
+
 
